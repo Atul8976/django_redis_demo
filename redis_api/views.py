@@ -17,7 +17,6 @@ def manage_items(request,*args,**kwargs):
         items = {}
         count = 0
 
-
         for key in redis_instance.keys("*"):
             items[key.decode("UTF-8")] = redis_instance.get(key)
             count += 1
